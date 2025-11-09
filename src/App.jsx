@@ -6,7 +6,7 @@ import Login from "./pages/LoginForm";
 import Signup from "./pages/SignupForm";
 import DashboardLayout from "./layout/DashboardLayout";
 import Overview from "./pages/Overview";
-import Evaluation from "./pages/Evaluation";
+// import Evaluation from "./pages/Evaluation";
 import Monitoring from "./pages/Monitoring";
 import ProgressReport from "./pages/ProgressReport";
 import WeeklyRemittance from "./pages/WeeklyRemittance";
@@ -113,7 +113,7 @@ export default function App() {
           path="/dashboard"
           element={<DashboardLayout setAuth={setIsAuthenticated} />}>
           <Route index element={<Overview />} />
-          <Route path="evaluation" element={<Evaluation />} />
+          {/* <Route path="evaluation" element={<Evaluation />} /> */}
           <Route path="monitoring" element={<Monitoring />} />
           <Route path="progress-report" element={<ProgressReport />} />
           <Route path="weekly-remittance" element={<WeeklyRemittance />} />
