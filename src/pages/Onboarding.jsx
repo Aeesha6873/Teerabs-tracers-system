@@ -1,6 +1,6 @@
 import React from "react";
 import { useOutletContext } from "react-router-dom";
-import "../styles/Onboarding.css";
+import "../styles/onboarding.css";
 
 const Onboarding = () => {
   const { loggedInUser } = useOutletContext();

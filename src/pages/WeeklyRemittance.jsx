@@ -1,6 +1,6 @@
 import React from "react";
 import { useOutletContext } from "react-router-dom";
-import "../styles/WeeklyRemittance.css";
+import "../styles/weeklyRemittance.css";
 
 const WeeklyRemittance = () => {
   const { loggedInUser } = useOutletContext();

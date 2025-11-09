@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Evaluation.css";
+import "../styles/evaluation.css";
 
 const Evaluation = () => {
   const loggedInUser = JSON.parse(localStorage.getItem("logged_in_user"));
