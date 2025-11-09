@@ -12,6 +12,8 @@ import ProgressReport from "./pages/ProgressReport";
 import WeeklyRemittance from "./pages/WeeklyRemittance";
 import Proposal from "./pages/Proposal";
 import Onboarding from "./pages/Onboarding";
+import IndividualLoans from "./pages/IndividualLoans";
+import ClusterLoans from "./pages/ClusterLoans";
 
 // Admin Pages
 import AdminLayout from "./layout/AdminLayout";
@@ -117,6 +119,8 @@ export default function App() {
           <Route path="weekly-remittance" element={<WeeklyRemittance />} />
           <Route path="proposal" element={<Proposal />} />
           <Route path="onboarding" element={<Onboarding />} />
+          <Route path="loans/individual" element={<IndividualLoans />} />
+          <Route path="loans/cluster" element={<ClusterLoans />} />
         </Route>
 
         {/* Admin Dashboard */}

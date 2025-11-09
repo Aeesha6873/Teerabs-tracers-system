@@ -1,0 +1,77 @@
+:root {
+  --accent-a: #00b7ff;
+  --accent-b: #6b8cff;
+  --text-dark: #0d1b2a;
+  --muted-dark: #46515f;
+  --card-bg: #111b2d;
+  --bg-top: #e6f2ff;
+  --bg-bottom: #ffffff;
+}
+
+.loan-page {
+  padding: 2rem;
+  min-height: 80vh;
+  background: linear-gradient(120deg, var(--bg-top), var(--bg-bottom));
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.loan-page h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+}
+
+.loan-form {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 500px;
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: var(--bg-top);
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+.apply-btn {
+  background: var(--accent-a);
+  color: #fff;
+  padding: 0.9rem 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.apply-btn:hover {
+  background: var(--accent-b);
+}
+
+.success-message {
+  background: #d4edda;
+  color: #155724;
+  padding: 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  max-width: 500px;
+  text-align: center;
+}
