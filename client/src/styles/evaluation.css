@@ -1,0 +1,120 @@
+:root {
+  --accent-a: #00b7ff;
+  --accent-b: #6b8cff;
+  --text-dark: #0d1b2a;
+  --muted-dark: #46515f;
+  --muted: rgba(0, 0, 0, 0.3);
+  --card-bg: #111b2d;
+  --bg-top: #e6f2ff;
+  --bg-bottom: #ffffff;
+}
+
+.evaluation-page {
+  padding: 2rem;
+  min-height: 100vh;
+  background: var(--bg-bottom);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.evaluation-page h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+.evaluation-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.evaluation-card {
+  background: var(--card-bg);
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.evaluation-card:hover {
+  transform: translateY(-3px);
+}
+
+.evaluation-card h3 {
+  font-size: 1rem;
+  color: var(--accent-a);
+  margin-bottom: 0.5rem;
+}
+
+.evaluation-card p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.evaluation-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f8faff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.evaluation-table th,
+.evaluation-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.evaluation-table th {
+  background-color: var(--accent-b);
+  color: #fff;
+  font-weight: 600;
+}
+
+.evaluation-table tr:nth-child(even) {
+  background-color: #f0f4ff;
+}
+
+.evaluation-table tr:hover {
+  background-color: #d9ebff;
+}
+
+.cluster-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cluster-summary p {
+  background: #f0f4ff;
+  padding: 1rem;
+  border-radius: 10px;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.evaluation-page h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+  .evaluation-cards,
+  .cluster-summary {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .evaluation-table th,
+  .evaluation-table td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}

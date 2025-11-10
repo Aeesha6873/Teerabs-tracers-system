@@ -1,0 +1,103 @@
+.monitoring-page {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg-bottom);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.monitoring-page h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+.monitoring-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.monitoring-card {
+  background: var(--card-bg);
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.monitoring-card:hover {
+  transform: translateY(-3px);
+}
+
+.monitoring-card h3 {
+  font-size: 1rem;
+  color: var(--accent-a);
+  margin-bottom: 0.5rem;
+}
+
+.monitoring-card p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.monitoring-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f8faff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem; /* ✅ space between cards and table */
+}
+
+.monitoring-table th,
+.monitoring-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.monitoring-table th {
+  background-color: var(--accent-b);
+  color: #fff;
+  font-weight: 600;
+}
+
+.monitoring-table tr:nth-child(even) {
+  background-color: #f0f4ff;
+}
+
+.monitoring-table tr:hover {
+  background-color: #d9ebff;
+}
+
+.status-ok {
+  color: var(--status-ok);
+  font-weight: bold;
+}
+
+.status-overdue {
+  color: var(--status-overdue);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .monitoring-page {
+    padding: 1rem;
+  }
+
+  .monitoring-cards {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .monitoring-table th,
+  .monitoring-table td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}

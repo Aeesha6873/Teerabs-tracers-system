@@ -1,0 +1,108 @@
+:root {
+  --accent-a: #00b7ff;
+  --accent-b: #6b8cff;
+  --text-dark: #0d1b2a;
+  --muted-dark: #46515f;
+  --muted: rgba(0, 0, 0, 0.3);
+  --card-bg: #111b2d;
+  --bg-top: #e6f2ff;
+  --bg-bottom: #ffffff;
+  --status-complete: #28a745;
+  --status-pending: #ffc107;
+}
+
+.progress-page {
+  padding: 2rem;
+  min-height: 100vh;
+  background: var(--bg-bottom);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.progress-page h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+.progress-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.progress-card {
+  background: var(--card-bg);
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.progress-card h3 {
+  font-size: 1rem;
+  color: var(--accent-a);
+  margin-bottom: 0.5rem;
+}
+
+.progress-card p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.progress-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f8faff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.progress-table th,
+.progress-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.progress-table th {
+  background-color: var(--accent-b);
+  color: #fff;
+  font-weight: 600;
+}
+
+.progress-table tr:nth-child(even) {
+  background-color: #f0f4ff;
+}
+
+.progress-table tr:hover {
+  background-color: #d9ebff;
+}
+
+.progress-bar-container {
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 12px;
+  width: 100%;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 10px;
+  background: var(--accent-a);
+}
+
+@media (max-width: 768px) {
+  .progress-cards {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .progress-table th,
+  .progress-table td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}

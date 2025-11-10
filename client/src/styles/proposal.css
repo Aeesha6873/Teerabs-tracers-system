@@ -1,0 +1,107 @@
+:root {
+  --accent-a: #00b7ff;
+  --accent-b: #6b8cff;
+  --text-dark: #0d1b2a;
+  --muted-dark: #46515f;
+  --muted: rgba(0, 0, 0, 0.3);
+  --card-bg: #111b2d;
+  --bg-top: #e6f2ff;
+  --bg-bottom: #ffffff;
+}
+
+.proposal-page {
+  padding: 2rem;
+  min-height: 100vh;
+  background: var(--bg-bottom);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.proposal-page h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+.proposal-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.proposal-card {
+  background: var(--card-bg);
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.proposal-card h3 {
+  font-size: 1rem;
+  color: var(--accent-a);
+  margin-bottom: 0.5rem;
+}
+
+.proposal-card p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.proposal-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f8faff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.proposal-table th,
+.proposal-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.proposal-table th {
+  background-color: var(--accent-b);
+  color: #fff;
+  font-weight: 600;
+}
+
+.proposal-table tr:nth-child(even) {
+  background-color: #f0f4ff;
+}
+
+.proposal-table tr:hover {
+  background-color: #d9ebff;
+}
+
+.status-approved {
+  color: #00ff96;
+  font-weight: 600;
+}
+
+.status-pending {
+  color: #ffc107;
+  font-weight: 600;
+}
+
+.status-rejected {
+  color: #ff4c4c;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .proposal-cards {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .proposal-table th,
+  .proposal-table td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}

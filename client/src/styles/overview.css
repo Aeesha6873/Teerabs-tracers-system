@@ -1,0 +1,162 @@
+:root {
+  --accent-a: #00b7ff;
+  --accent-b: #6b8cff;
+  --text-dark: #0d1b2a;
+  --muted-dark: #46515f;
+  --muted: rgba(0, 0, 0, 0.3);
+  --card-bg: #111b2d;
+  --bg-top: #e6f2ff;
+  --bg-bottom: #ffffff;
+}
+
+.overview-page {
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.overview-page h1 {
+  font-size: 1.8rem;
+  color: var(--text-dark);
+  margin-bottom: 0.2rem;
+}
+
+.overview-page p {
+  color: var(--muted-dark);
+  margin-bottom: 2rem;
+}
+
+.overview-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card h3 {
+  font-size: 1rem;
+  color: var(--accent-a);
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.recent-activity {
+  margin-top: 2rem;
+}
+
+.recent-activity h2 {
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.activity-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  background: #f0f4ff;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  position: relative;
+  border-left: 4px solid var(--accent-a);
+  transition: background 0.2s;
+}
+
+.activity-item.approved {
+  border-left-color: #28a745;
+  background: #e6f9ed;
+}
+
+.activity-item.rejected {
+  border-left-color: #dc3545;
+  background: #ffe6e6;
+}
+
+.activity-item.submitted {
+  border-left-color: var(--accent-a);
+}
+
+.activity-item .icon {
+  margin-right: 0.8rem;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+}
+
+.activity-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.activity-item span {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: var(--muted-dark);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.action-buttons button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.apply-loan {
+  background: var(--accent-a);
+  color: #fff;
+}
+
+.apply-loan:hover {
+  background: var(--accent-b);
+}
+
+.make-payment {
+  background: #28a745;
+  color: #fff;
+}
+
+.view-details {
+  background: #6c757d;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .overview-cards {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

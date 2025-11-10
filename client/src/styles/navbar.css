@@ -1,0 +1,268 @@
+.navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e6e8eb;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-title {
+  font-size: 1.3rem;
+  color: #0d1b2a;
+  font-weight: 600;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-search {
+  padding: 0.5rem 1rem;
+  border: 1px solid #cfd8e3;
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+
+.navbar-search:focus {
+  border-color: #0d1b2a;
+}
+
+.navbar-logout {
+  background: #0d1b2a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.navbar-logout:hover {
+  background: #0d1b2a;
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropbtn {
+  background: none;
+  border: none;
+  color: #0d1b2a;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.arrow {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #e6e8eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  list-style: none;
+  padding: 0.5rem 0;
+  z-index: 100;
+  min-width: 160px;
+}
+
+.nav-dropdown-menu li {
+  padding: 0.4rem 1rem;
+}
+
+.nav-dropdown-menu li a {
+  text-decoration: none;
+  color: #1b263b;
+  font-size: 0.9rem;
+  display: block;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-dropdown-menu li a:hover {
+  background: #f1f5ff;
+  color: #0d1b2a;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+.loan-dropdown {
+  position: relative;
+}
+
+.loan-btn {
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #0d1b2a;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+
+.loan-menu {
+  position: absolute;
+  top: 2.2rem;
+  right: 0;
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0.5rem 0;
+  min-width: 160px;
+  z-index: 100;
+}
+
+.loan-menu li {
+  padding: 0.5rem 1rem;
+}
+
+.loan-menu li a {
+  color: #0d1b2a;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.loan-menu li:hover {
+  background: #f3f5f8;
+}
+
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .menu li {
+    padding: 1rem;
+    border-bottom: 1px solid #f0f2f5;
+  }
+
+  .menu li a {
+    color: #0d1b2a;
+    font-weight: 500;
+    text-decoration: none;
+  }
+}
+
+.loan-dropdown {
+  position: relative;
+}
+
+.loan-btn {
+  background: #f0f6ff;
+  border: 1px solid #d4e3ff;
+  color: #0d1b2a;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 8px;
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.loan-btn:hover,
+.loan-btn.active {
+  background: #0d1b2a;
+  color: #fff;
+  border-color: #0d1b2a;
+}
+
+.loan-btn .loan-icon {
+  font-size: 1.1rem;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+.loan-menu.modern {
+  position: absolute;
+  top: 2.6rem;
+  right: 0;
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.6rem 0;
+  list-style: none;
+  min-width: 190px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #edf1f6;
+  animation: dropdownFade 0.25s ease;
+  z-index: 100;
+}
+
+.loan-menu.modern li {
+  padding: 0.5rem 1rem;
+}
+
+.loan-menu.modern li a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #1b263b;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.loan-menu.modern li a svg {
+  color: #0d1b2a;
+}
+
+.loan-menu.modern li:hover {
+  background: #f3f7ff;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
