@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { states, lgas } from "../data/nigeriaData";
+
 // import "./SignupForm.css";
 
 export default function Signup({ switchToLogin }) {
@@ -15,7 +17,9 @@ export default function Signup({ switchToLogin }) {
     phone: "",
     bvn: "",
     nin: "",
+    state: "",
     lga: "",
+
     businessName: "",
     proposal: "",
     accountNumber: "",
@@ -32,7 +36,9 @@ export default function Signup({ switchToLogin }) {
         phone: "",
         bvn: "",
         nin: "",
+        state: "",
         lga: "",
+
         accountNumber: "",
         accountName: "",
         bankName: "",
@@ -63,6 +69,7 @@ export default function Signup({ switchToLogin }) {
           phone: "",
           bvn: "",
           nin: "",
+          state: "",
           lga: "",
           accountNumber: "",
           accountName: "",
@@ -122,7 +129,7 @@ export default function Signup({ switchToLogin }) {
                 setForm({ ...form, accountType: e.target.value });
                 setStep(1);
               }}
-              className="tt-input">
+              className="tt-input tt-input-select">
               <option value="individual">Individual</option>
               <option value="cluster">Cluster</option>
             </select>
@@ -175,16 +182,44 @@ export default function Signup({ switchToLogin }) {
             />
           </label>
           <label>
+            State
+            <select
+              name="state"
+              value={form.state}
+              onChange={(e) => {
+                setForm({ ...form, state: e.target.value, lga: "" });
+              }}
+              className="tt-input tt-input-select"
+              required>
+              <option value="">Select State</option>
+              {states.map((st) => (
+                <option key={st} value={st}>
+                  {st}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <label>
             LGA
-            <input
+            <select
               name="lga"
-              type="text"
               value={form.lga}
               onChange={handleChange}
-              className="tt-input"
+              className="tt-input tt-input-select"
               required
-            />
+              disabled={!form.state}>
+              <option value="">Select LGA</option>
+
+              {form.state &&
+                lgas[form.state]?.map((l) => (
+                  <option key={l} value={l}>
+                    {l}
+                  </option>
+                ))}
+            </select>
           </label>
+
           <label>
             Password
             <input

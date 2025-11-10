@@ -1,21 +1,10 @@
-:root {
-  --accent-a: #00b7ff;
-  --accent-b: #6b8cff;
-  --text-dark: #0d1b2a;
-  --muted-dark: #46515f;
-  --muted: rgba(0, 0, 0, 0.3);
-  --card-bg: #111b2d;
-  --bg-top: #e6f2ff;
-  --bg-bottom: #ffffff;
-  --status-ok: #28a745;
-  --status-overdue: #dc3545;
-}
-
 .monitoring-page {
-  padding: 2rem;
+  width: 100%;
   min-height: 100vh;
   background: var(--bg-bottom);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
 .monitoring-page h2 {
@@ -64,6 +53,7 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem; /* ✅ space between cards and table */
 }
 
 .monitoring-table th,
@@ -97,6 +87,10 @@
 }
 
 @media (max-width: 768px) {
+  .monitoring-page {
+    padding: 1rem;
+  }
+
   .monitoring-cards {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }

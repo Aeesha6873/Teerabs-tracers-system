@@ -175,6 +175,24 @@ textarea {
   transition: all 0.3s ease;
   width: 80%;
 }
+.tt-input-select {
+  width: 89%;
+  background-color: #0d1b2a;
+}
+select option {
+  background-color: #0d1b2a !important;
+  color: #fff !important;
+  padding: 10px;
+}
+select option:hover {
+  background-color: #12263a !important;
+  color: #fff !important;
+}
+
+select option:checked {
+  background-color: #19324d !important;
+  color: #fff !important;
+}
 
 .tt-step-buttons {
   display: flex;
