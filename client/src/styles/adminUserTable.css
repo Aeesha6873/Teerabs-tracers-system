@@ -1,0 +1,138 @@
+:root {
+  --accent-a: #00b7ff;
+  --accent-b: #6b8cff;
+  --text-dark: #0d1b2a;
+  --muted-dark: #46515f;
+  --muted: #000f;
+
+  --bg-top: #e6f2ff;
+  --bg-bottom: #ffffff;
+  --danger: #dc3545;
+  --success: #28a745;
+}
+
+.admin-user-wrapper {
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.admin-user-title {
+  font-size: 1.8rem;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.admin-user-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
+
+.admin-user-table th {
+  text-align: left;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  color: var(--muted-dark);
+}
+
+.admin-user-table td {
+  padding: 0.75rem 1rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  color: #fff;
+}
+
+.status-badge {
+  padding: 0.35rem 0.7rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-badge.active {
+  background: var(--success);
+  color: #fff;
+}
+
+.status-badge.pending {
+  background: #ffc107;
+  color: #111;
+}
+
+.status-badge.blocked {
+  background: var(--danger);
+  color: #fff;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.actions button {
+  flex: 1;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.actions .view {
+  background: var(--accent-a);
+  color: #fff;
+}
+.actions .view:hover {
+  background: var(--accent-b);
+}
+
+.actions .edit {
+  background: #6b8cff;
+  color: #fff;
+}
+.actions .edit:hover {
+  background: #00b7ff;
+}
+
+.actions .delete {
+  background: var(--danger);
+  color: #fff;
+}
+.actions .delete:hover {
+  background: #a71d2a;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .admin-user-table th {
+    display: none; /* hide table headers */
+  }
+
+  .admin-user-table td {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .admin-user-table tr {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}

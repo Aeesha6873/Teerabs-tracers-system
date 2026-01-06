@@ -10,35 +10,95 @@ export default function Login({ switchToSignup }) {
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    setTimeout(() => {
-      setLoading(false);
-
-      const registered = JSON.parse(localStorage.getItem("teerabs_user"));
-
+    try {
+      // For admin login
       const isAdmin =
         form.email === "admin@teerabs.com" && form.password === "admin123";
-
       if (isAdmin) {
+        localStorage.setItem(
+          "logged_in_user",
+          JSON.stringify({
+            email: form.email,
+            role: "admin",
+            isAdmin: true,
+          })
+        );
         navigate("/admin");
         return;
       }
 
-      if (
-        !registered ||
-        registered.email !== form.email ||
-        registered.password !== form.password
-      ) {
-        alert("Invalid email or password");
-        return;
+      // Send login request to backend API
+      const response = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: form.email,
+          password: form.password,
+        }),
+      });
+
+      // Check if response is OK
+      if (!response.ok) {
+        const errorText = await response.text();
+        let errorMessage = "Login failed";
+
+        try {
+          const errorData = JSON.parse(errorText);
+          errorMessage = errorData.message || errorMessage;
+        } catch {
+          errorMessage =
+            response.status === 401
+              ? "Invalid email or password"
+              : "Server error";
+        }
+
+        throw new Error(errorMessage);
       }
 
-      localStorage.setItem("logged_in_user", JSON.stringify(registered));
-      navigate("/dashboard");
-    }, 800);
+      const result = await response.json();
+
+      if (result.success) {
+        // Store user data in localStorage
+        const userData = {
+          id: result.data._id,
+          firstName: result.data.firstName,
+          lastName: result.data.lastName,
+          email: result.data.email,
+          role: result.data.role,
+          profile: result.data.profile,
+
+          ...(result.data.bvn && { bvn: result.data.bvn }),
+          ...(result.data.businessName && {
+            businessName: result.data.businessName,
+          }),
+          ...(result.data.clusterName && {
+            clusterName: result.data.clusterName,
+          }),
+        };
+
+        localStorage.setItem("logged_in_user", JSON.stringify(userData));
+
+        // Redirect based on role or other criteria
+        if (result.data.role === "admin") {
+          navigate("/admin");
+        } else {
+          navigate("/dashboard");
+        }
+      } else {
+        throw new Error(result.message || "Login failed");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      alert(error.message || "Login failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

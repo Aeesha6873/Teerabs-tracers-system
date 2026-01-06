@@ -1,63 +1,188 @@
 import React from "react";
-import { FiCheckCircle, FiXCircle, FiPlusCircle } from "react-icons/fi";
+import {
+  FiCheckCircle,
+  FiXCircle,
+  FiPlusCircle,
+  FiDollarSign,
+  FiCreditCard,
+  FiEye,
+  FiTrendingUp,
+  FiPackage,
+  FiClock,
+  FiArrowRight,
+  FiBell,
+  FiActivity,
+  FiShield,
+} from "react-icons/fi";
 import "../styles/overview.css";
 
 export default function Overview({ loggedInUser }) {
   return (
     <div className="overview-page">
-      <h1>Welcome, {loggedInUser?.name || "User"}!</h1>
-      <p>Here's your loan overview.</p>
-
-      <div className="overview-cards">
-        <div className="card">
-          <h3>Active Loans</h3>
-          <p>0</p>
-        </div>
-        <div className="card">
-          <h3>Pending Approvals</h3>
-          <p>0</p>
-        </div>
-        <div className="card">
-          <h3>Completed Loans</h3>
-          <p>0</p>
-        </div>
-        <div className="card">
-          <h3>Outstanding Balance</h3>
-          <p>$0</p>
+      {/* Header - Same as Evaluation */}
+      <div className="overview-header">
+        <div className="header-content">
+          <h1 className="header-title">
+            Welcome back, {loggedInUser?.name || "User"}! 👋
+          </h1>
+          <p className="header-subtitle">
+            Monitor your loans, track payments, and manage your financial
+            journey in one place.
+          </p>
+          <div className="header-badges">
+            <div className="header-badge">
+              <FiBell size={14} />
+              <span>Real-time updates</span>
+            </div>
+            <div className="header-badge">
+              <FiActivity size={14} />
+              <span>Smart insights</span>
+            </div>
+            <div className="header-badge">
+              <FiShield size={14} />
+              <span>Secure & reliable</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="recent-activity">
-        <h2>Recent Activity</h2>
+      {/* Stats Grid - Same style as profile stats */}
+      <div className="stats-grid">
+        <div className="stat-card">
+          <div className="stat-icon">
+            <FiPackage />
+          </div>
+          <span className="stat-value">0</span>
+          <span className="stat-label">Active Loans</span>
+          <span className="stat-trend">
+            <FiTrendingUp /> No change
+          </span>
+        </div>
+
+        <div className="stat-card">
+          <div className="stat-icon">
+            <FiClock />
+          </div>
+          <span className="stat-value">0</span>
+          <span className="stat-label">Pending Approvals</span>
+          <span className="stat-trend">
+            <FiTrendingUp /> Stable
+          </span>
+        </div>
+
+        <div className="stat-card">
+          <div className="stat-icon">
+            <FiCheckCircle />
+          </div>
+          <span className="stat-value">0</span>
+          <span className="stat-label">Completed Loans</span>
+          <span className="stat-trend">
+            <FiTrendingUp /> 100% success
+          </span>
+        </div>
+
+        <div className="stat-card">
+          <div className="stat-icon">
+            <FiDollarSign />
+          </div>
+          <span className="stat-value">$0</span>
+          <span className="stat-label">Outstanding Balance</span>
+          <span className="stat-trend">
+            <FiTrendingUp /> $0 total
+          </span>
+        </div>
+      </div>
+
+      {/* Quick Actions - Same style as detail cards */}
+      <div className="quick-actions">
+        <div className="action-card">
+          <div className="actions-icon">
+            <FiPlusCircle />
+          </div>
+          <h3 className="action-title">Apply for Loan</h3>
+          <p className="action-description">
+            Start a new loan application with competitive rates and flexible
+            repayment options.
+          </p>
+          <button className="action-button">Get Started</button>
+        </div>
+
+        <div className="action-card">
+          <div className="actions-icon">
+            <FiCreditCard />
+          </div>
+          <h3 className="action-title">Make Payment</h3>
+          <p className="action-description">
+            Secure payment processing with multiple methods. Schedule or make
+            one-time payments.
+          </p>
+          <button className="action-button">Pay Now</button>
+        </div>
+
+        <div className="action-card">
+          <div className="actions-icon">
+            <FiEye />
+          </div>
+          <h3 className="action-title">View Analytics</h3>
+          <p className="action-description">
+            Detailed insights and analytics about your loan portfolio and
+            financial health.
+          </p>
+          <button className="action-button">View Dashboard</button>
+        </div>
+      </div>
+
+      {/* Activity Section - Same style as details section */}
+      <div className="activity-section">
+        <div className="activity-header">
+          <h2 className="activity-title">
+            <FiActivity size={18} /> Recent Activity
+          </h2>
+          <button className="view-all-btn">
+            View All <FiArrowRight />
+          </button>
+        </div>
+
         <div className="activity-feed">
-          <div className="activity-item approved">
-            <div className="icon">
+          <div className="activities-item approved">
+            <div className="activity-icon">
               <FiCheckCircle />
             </div>
-            <p>Loan approved</p>
-            <span>3 mins ago</span>
+            <div className="activity-content">
+              <p>Your personal loan application has been approved</p>
+              <span className="activity-time">3 mins ago</span>
+            </div>
+            <span className="activity-status">
+              <FiCheckCircle /> Approved
+            </span>
           </div>
-          <div className="activity-item rejected">
-            <div className="icon">
+
+          <div className="activities-item rejected">
+            <div className="activity-icon">
               <FiXCircle />
             </div>
-            <p>Loan rejected</p>
-            <span>1 hour ago</span>
+            <div className="activity-content">
+              <p>Business loan requires additional documentation</p>
+              <span className="activity-time">1 hour ago</span>
+            </div>
+            <span className="activity-status">
+              <FiXCircle /> Action Required
+            </span>
           </div>
-          <div className="activity-item submitted">
-            <div className="icon">
+
+          <div className="activities-item submitted">
+            <div className="activity-icon">
               <FiPlusCircle />
             </div>
-            <p>New loan submitted</p>
-            <span>Yesterday</span>
+            <div className="activity-content">
+              <p>New home renovation loan submitted for review</p>
+              <span className="activity-time">Yesterday</span>
+            </div>
+            <span className="activity-status">
+              <FiClock /> Under Review
+            </span>
           </div>
         </div>
-      </div>
-
-      <div className="action-buttons">
-        <button className="apply-loan">Apply for New Loan</button>
-        <button className="make-payment">Make a Repayment</button>
-        <button className="view-details">View Loan Details</button>
       </div>
     </div>
   );

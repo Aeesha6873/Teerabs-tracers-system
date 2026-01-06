@@ -1,0 +1,255 @@
+:root {
+  --navbar-bg: #ffffff;
+  --navbar-text: #0d1b2a;
+  --navbar-accent: #00b7ff;
+  --navbar-border: #e6e9f0;
+  --navbar-shadow: rgba(0, 0, 0, 0.08);
+  --navbar-hover: #f5f7fa;
+}
+
+/* Main Navbar */
+.admin-navbar {
+  height: 80px;
+  background: var(--navbar-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  color: var(--navbar-text);
+  box-shadow: 0 4px 20px var(--navbar-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1500;
+  border-bottom: 1px solid var(--navbar-border);
+}
+
+/* Left Section */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-toggle {
+  background: transparent;
+  border: none;
+  color: var(--navbar-text);
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.navbar-toggle:hover {
+  background: var(--navbar-hover);
+  color: var(--navbar-accent);
+  transform: rotate(10deg);
+}
+
+.navbar-title h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.navbar-title h1 span {
+  background: linear-gradient(90deg, var(--navbar-accent), #6b8cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar-subtitle {
+  font-size: 0.85rem;
+  color: #6c7a93;
+  margin: 0.2rem 0 0 0;
+  opacity: 0.9;
+}
+
+/* Center Section */
+.navbar-center {
+  flex: 1;
+  max-width: 500px;
+  margin: 0 2rem;
+}
+
+.navbar-search {
+  position: relative;
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c7a93;
+  font-size: 1.1rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 3rem;
+  border: 1px solid var(--navbar-border);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.search-input:focus {
+  background: #ffffff;
+  border-color: var(--navbar-accent);
+  box-shadow: 0 0 0 3px rgba(0, 183, 255, 0.1);
+}
+
+/* Right Section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-notification {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: var(--navbar-text);
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.navbar-notification:hover {
+  background: var(--navbar-hover);
+  color: var(--navbar-accent);
+}
+
+.notification-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: #e53935;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Profile Section */
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navbar-profile:hover {
+  background: var(--navbar-hover);
+}
+
+.profile-avatar {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, var(--navbar-accent), #6b8cff);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.profile-role {
+  font-size: 0.8rem;
+  color: #6c7a93;
+  opacity: 0.9;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .navbar-center {
+    margin: 0 1rem;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-navbar {
+    height: 70px;
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+
+  .navbar-title h1 {
+    font-size: 1.3rem;
+  }
+
+  .navbar-subtitle {
+    display: none;
+  }
+
+  .navbar-center {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    background: var(--navbar-bg);
+    border-bottom: 1px solid var(--navbar-border);
+    display: none;
+  }
+
+  .navbar-search {
+    max-width: 100%;
+  }
+
+  .navbar-right {
+    gap: 1rem;
+  }
+
+  .profile-info {
+    display: none;
+  }
+
+  .navbar-toggle.active + .navbar-center {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-notification .notification-badge {
+    top: 0;
+    right: 0;
+  }
+
+  .profile-avatar {
+    width: 36px;
+    height: 36px;
+  }
+}

@@ -75,6 +75,8 @@ html,
   font-size: 0.95rem;
   outline: none;
   margin-top: 0.3rem;
+  width: 100%;
+  max-width: 400px;
 }
 
 .tt-input:focus,
@@ -92,13 +94,14 @@ html,
   background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
   border: none;
   color: var(--text-light);
-  padding: 0.9rem 1rem;
+  padding: 0.65rem 1rem;
   font-weight: 600;
   font-size: 1rem;
-  border-radius: 60px;
+  border-radius: 30px;
   cursor: pointer;
   width: 100%;
-  margin-top: 0.5rem;
+  max-width: 380px;
+  margin-top: 0.4rem;
 }
 
 .tt-btn:hover {
@@ -108,9 +111,9 @@ html,
 
 .tt-switch {
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   font-size: 0.9rem;
-  color: var(--muted);
+  color: #fff;
 }
 .tt-password {
   position: relative;
@@ -122,8 +125,31 @@ html,
   gap: 0.4rem;
   position: relative;
 }
+.tt-forgot {
+  color: #a8b8d8;
+}
+.tt-add-member {
+  width: 100%;
+  max-width: 380px;
+  align-self: flex-start;
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  background-color: #6b8cff;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
+.tt-add-member:hover {
+  background-color: #00b7ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 183, 255, 0.3);
+}
 .tt-form-steps {
+  height: 500px;
+  max-height: 600px;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -168,15 +194,17 @@ textarea {
   margin-top: 0.3rem;
   background: #f0f4f8;
   border: 1px solid #d0d7de;
-  padding: 0.8rem 1rem;
-  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
   outline: none;
   font-size: 0.95rem;
   transition: all 0.3s ease;
-  width: 80%;
+  width: 90%;
+  max-width: 380px;
 }
 .tt-input-select {
-  width: 89%;
+  width: 100%;
+  max-width: 380px;
   background-color: #0d1b2a;
 }
 select option {

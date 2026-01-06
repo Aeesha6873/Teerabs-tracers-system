@@ -7,7 +7,6 @@ import "../styles/dashboard.css";
 const DashboardLayout = ({ setAuth }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [loggedInUser, setLoggedInUser] = useState(null);
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -18,40 +17,45 @@ const DashboardLayout = ({ setAuth }) => {
     } else {
       setLoggedInUser(user);
     }
-  }, []);
+  }, [navigate]);
+
+  // Close sidebar when clicking overlay or sidebar link
+  const closeSidebar = () => {
+    setSidebarOpen(false);
+  };
 
   if (!loggedInUser) {
     return <div className="loading-screen">Loading dashboard...</div>;
   }
 
   return (
-    <div className={`dashboard-container ${sidebarOpen ? "sidebar-open" : ""}`}>
+    <>
+      {/* Sidebar with isOpen prop */}
       <Sidebar
         isOpen={sidebarOpen}
-        onLinkClick={() => setSidebarOpen(false)}
+        onLinkClick={closeSidebar}
         setSidebarOpen={setSidebarOpen}
       />
 
+      {/* Overlay - only show on mobile when sidebar is open */}
       {sidebarOpen && (
-        <div
-          className="sidebar-overlay"
-          onClick={() => setSidebarOpen(false)}
-        />
+        <div className="sidebar-overlay" onClick={closeSidebar} />
       )}
 
+      {/* Main content area */}
       <div className="main-content">
         <Navbar
           user={loggedInUser}
           setAuth={setAuth}
-          sidebarOpen={sidebarOpen}
           setSidebarOpen={setSidebarOpen}
+          isSidebarOpen={sidebarOpen}
         />
 
         <div className="content-area">
           <Outlet context={{ loggedInUser }} />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

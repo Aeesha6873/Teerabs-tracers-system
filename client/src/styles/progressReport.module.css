@@ -1,0 +1,164 @@
+:root {
+  --accent-a: #00b7ff;
+  --accent-b: #6b8cff;
+}
+.page {
+  padding: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.tableWrapper {
+  border-radius: 8px;
+  padding: 10px;
+  display: block;
+}
+
+.tableHeader,
+.tableRow {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr 120px 120px 120px;
+  padding: 12px 10px;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.tableHeader {
+  background: #f7f7f7;
+  font-weight: 600;
+}
+
+.status {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  width: 60px;
+}
+
+.pending {
+  background: #fff4d3;
+  color: #b68a00;
+}
+
+.approved {
+  background: #dfffdf;
+  color: #1a7d1a;
+}
+
+.rejected {
+  background: #ffe0e0;
+  color: #c70000;
+}
+
+/* BUTTON */
+.viewBtn {
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  border: none;
+  cursor: pointer;
+  color: #0d1b2a;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+  justify-content: center;
+  transition: 0.2s ease;
+}
+
+/* MOBILE CARD VERSION */
+.cardContainer {
+  display: none;
+}
+
+.card {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* 
+/* MODAL */
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  z-index: 3000;
+}
+.modal {
+  background: #fff;
+  width: 450px;
+  max-width: 100%;
+  border-radius: 16px 0 0 16px;
+  padding: 2rem;
+  position: relative;
+  overflow-y: auto;
+  height: 100%;
+  box-shadow: 4px 0 25px rgba(0, 0, 0, 0.15);
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #46515f;
+  font-weight: 600;
+}
+.modalTitle {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.modalBody p {
+  margin-bottom: 8px;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+}
+
+.submitBtn {
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  border: none;
+  cursor: pointer;
+  color: #0d1b2a;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+  justify-content: center;
+  transition: 0.2s ease;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 900px) {
+  .tableWrapper {
+    display: none;
+  }
+
+  .cardContainer {
+    display: block;
+  }
+}

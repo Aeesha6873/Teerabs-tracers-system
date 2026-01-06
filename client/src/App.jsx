@@ -11,7 +11,7 @@ import Monitoring from "./pages/Monitoring";
 import ProgressReport from "./pages/ProgressReport";
 import WeeklyRemittance from "./pages/WeeklyRemittance";
 import Proposal from "./pages/Proposal";
-import Onboarding from "./pages/Onboarding";
+
 import IndividualLoans from "./pages/IndividualLoans";
 import ClusterLoans from "./pages/ClusterLoans";
 
@@ -20,13 +20,18 @@ import AdminLayout from "./layout/AdminLayout";
 import AdminOverview from "./pages/admin/AdminOverview";
 import AdminUsers from "./pages/admin/AdminUsers";
 import AdminEvaluation from "./pages/admin/AdminEvaluation";
-// import AdminMonitoring from "./admin/AdminMonitoring";
-// import AdminProgress from "./admin/AdminProgress";
-// import AdminWeeklyRemittance from "./admin/AdminWeeklyRemittance";
-// import AdminProposals from "./admin/AdminProposals";
-// import AdminOnboarding from "./admin/AdminOnboarding";
+import Cluster from "./pages/admin/Cluster";
+import Onboarding from "./pages/admin/Onboarding";
+import AdminLoan from "./pages/admin/loans/AdminLoan";
+import AdminProposals from "./pages/admin/AdminProposal/Proposals";
+import Repayment from "./pages/admin/LoanRepayment/AdminLoanRepayment";
+import AdminProgress from "./pages/admin/AdminProgressReports";
+import AdminReport from "./pages/admin/AdminReport/AdminReports";
+import AdminWeeklyRemittance from "./pages/admin/AdminRemittance";
 
 import "./components/app.css";
+
+import AdminSettings from "./pages/admin/AdminSettings";
 
 export default function App() {
   const [isLogin, setIsLogin] = useState(true);
@@ -118,7 +123,7 @@ export default function App() {
           <Route path="progress-report" element={<ProgressReport />} />
           <Route path="weekly-remittance" element={<WeeklyRemittance />} />
           <Route path="proposal" element={<Proposal />} />
-          <Route path="onboarding" element={<Onboarding />} />
+
           <Route path="loans/individual" element={<IndividualLoans />} />
           <Route path="loans/cluster" element={<ClusterLoans />} />
         </Route>
@@ -128,11 +133,17 @@ export default function App() {
           <Route index element={<AdminOverview />} />
           <Route path="users" element={<AdminUsers />} />
           <Route path="evaluation" element={<AdminEvaluation />} />
-          {/* <Route path="monitoring" element={<AdminMonitoring />} />
-          <Route path="progress" element={<AdminProgress />} />
-          <Route path="remittance" element={<AdminWeeklyRemittance />} />
+          <Route path="clusters" element={<Cluster />} />
+          <Route path="onboarding" element={<Onboarding />} />
+          <Route path="loans" element={<AdminLoan />} />
+          <Route path="repayment" element={<Repayment />} />
           <Route path="proposals" element={<AdminProposals />} />
-          <Route path="onboarding" element={<AdminOnboarding />} /> */}
+          <Route path="reports" element={<AdminReport />} />
+          <Route path="progress-reports" element={<AdminProgress />} />
+          <Route path="settings" element={<AdminSettings />} />
+
+          {/* <Route path="monitoring" element={<AdminMonitoring />} /> */}
+          <Route path="remittance" element={<AdminWeeklyRemittance />} />
         </Route>
       </Routes>
     </Router>
